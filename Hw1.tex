@@ -1,0 +1,101 @@
+\documentclass[12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{esint}
+\usepackage{subfigure}
+\usepackage{color}
+\usepackage{moreverb}
+\usepackage{wrapfig}
+
+\textwidth 17cm \topmargin -1cm \oddsidemargin 0cm \textheight 21.5cm
+\pagestyle{empty} \pagestyle{fancyplain}
+\lhead[\fancyplain{}{}]{\fancyplain{}{{\sc Adam Farnsworth, Myles Adams:}}}
+\chead[\fancyplain{}{}]{\fancyplain{}{{\sc Hw 1}}}
+\rhead[\fancyplain{}{}]{\fancyplain{}{{\sc Fall 2017}}}
+
+\newcommand{\etal}{\textit{et al. }}
+
+\begin{document}
+\centerline{\Large\textbf{Question 1}}
+\vspace{2cm}
+
+\section{Introduction}\label{sec::Intro}
+The goal of this project is to implement three different numerical methods for solving a general ODE and study their accuracy.  These numerical methods are as follows:
+\begin{itemize}
+\item The Euler method.
+\item The explicit trapezoidal method (RK2).
+\item The classical Runge-Kutta method (RK4).
+\end{itemize}
+We will use these to study a falling object under the force of gravity and drag force.  This will be seen by comparing the numerical solution and the exact solution graphically.  
+
+\section{Shared equations and values}\label{sec::equations and values}
+All three methods will use the ODE bellow:
+$$
+\left\{ \begin{array}{rl}
+\frac{dy}{dt} = f(t, y), \mbox{ } \\
+y(t_0) = y_0 \mbox{ }
+       \end{array} \right.
+$$
+where $y = y(t)$ is the unknown solution we seek to approximate, $f = f(t, y)$ is a given function,
+$t_0$ is the given initial time and $y_0$ the given initial condition.  In order to check the accuracy, we consider the following system describing a falling object under the force of gravity and drag force:
+$$
+\left\{ \begin{array}{rl}
+\frac{dv}{dt}  = g -\frac{c_d}{m}v^2, \mbox{ } \\
+v(0) = 0 \mbox{ }
+       \end{array} \right.
+$$
+where $g \approx 9.81\frac{m}{s^2}$ is the free-fall acceleration, $m = 75 kg$ is the mass of the object and
+$c_d = 0.25 \frac{kg}{m}$ is the drag coefficient. In this case $f(t, v) = g −\frac{c_d}{m}v^2$ and the exact solution is:
+
+\begin{equation}
+v(t)=\sqrt{\frac{gm}{c_d}}tanh(t\sqrt{\frac{gc_d}{m}})\nonumber
+\end{equation}
+
+and we will take $t_f = 15s$ and a time step of $\Delta t = 0.1s, 0.05s, 0.025s, 0.0125s, 3.3 s$
+
+\section{Methods}\label{sec::Euler, RK2, RK4}
+
+\subsection{Euler}\label{sec::euler}
+%put stuff here for Euler
+
+\subsection{Explicit trapezoidal}\label{sec::RK2}
+%put stuff here for RK2
+
+\subsection{Classical Runge-Kutta}\label{sec::RK4}
+%put stuff here for RK4
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%
+\newpage
+\clearpage
+\centerline{\Large\textbf{Question 2}}
+\section{Introduction}\label{sec::Intro}
+Write intro here for question 2
+
+
+%%%%%%%%%%%
+
+
+%%%%%%%%%%%
+\newpage
+\clearpage
+\setcounter{page}{1} \pagestyle{empty}
+\section{References}\label{sec::References}
+[1] Daniil Bochkov, CS 111 - Introduction to Computational Science Homework 1
+
+    Fall 2017
+
+%%%%%%%%%%%
+
+\end{document}
